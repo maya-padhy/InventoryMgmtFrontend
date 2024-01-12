@@ -1,0 +1,317 @@
+
+  /* body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f5f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+
+    .container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 0 auto;
+    } */
+
+
+    /* .title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 50px;
+      color: #333;
+      text-decoration: underline;
+    }
+
+  .search-container {
+    text-align: center;
+    width: 50%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    transition: border-color 0.3s; 
+  }
+
+
+  .search-container:focus-within {
+    border-color: #3498db; 
+  }
+
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+
+  .search-icon {
+    font-size: 20px;
+    color: #3498db;
+    cursor: pointer;
+  }
+
+    .asset-details {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      border: #000000;
+    }
+    
+    .section-title {
+      font-size: 24px;
+      color: #333;
+      margin-top: 20px;
+    }
+    
+    .asset-info {
+      margin-top: 20px;
+    }
+    
+    .property {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .label {
+      font-weight: bold;
+      width: 120px;
+    }
+    
+    .value {
+      flex: 1;
+    }
+    
+    .update-section {
+      margin-top: 20px;
+    }
+    
+    label {
+      font-size: 16px;
+    }
+    
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    .update-button {
+      background-color: #337ab7; 
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .update-button:hover {
+      background-color: #255e91;
+    }
+    
+    */
+
+
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f5f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      text-align: center;
+      background-color: #fff;
+      border-radius: 10px;
+      margin: 0 auto;
+      max-width: 800px; /* Limit the width for better readability */
+      padding: 20px;
+      /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+    }
+    
+  .title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 50px;
+      color: #333;
+      text-decoration: underline;
+    }
+    .search-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px;
+      transition: border-color 0.3s; 
+    }
+
+    
+    
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+    
+    .search-icon {
+      font-size: 20px;
+      color: #3498db; /* Blue color similar to the sample */
+      cursor: pointer;
+    }
+    
+    .search-container:focus-within {
+      border-color: #3498db; /* Highlighted border color */
+    }
+    /* Asset details and update section (similar to the sample) */
+    .asset-details {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    }
+    
+    .section-title {
+      font-size: 24px;
+      color: black; /* Blue color similar to the sample */
+      margin-top: 20px;
+      align-content: center;
+      text-decoration: underline;
+      background-color: lightyellow;
+    }
+/*     
+    .property {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .label {
+      font-weight: bold;
+      width: 120px;
+    }
+    
+    .value {
+      flex: 1;
+    } */
+    
+    .update-section {
+      margin-top: 20px;
+    }
+    
+    label {
+      font-size: 16px;
+    }
+    
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    
+    .update-button {
+      background-color: #3498db; /* Blue color similar to the sample */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background-color: #3498db; ;
+      color: #fff;
+      border: none;
+      margin-top: 1%;
+    }
+    
+    .asset-info {
+      background-color: #fff;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      margin-top: 20px;
+      padding: 12px;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .property {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .label {
+      font-weight: bold;
+      width: 120px;
+    }
+    
+    .value {
+      flex: 1;
+    }
+    
+    .property:last-child {
+      margin-bottom: 0; /* Remove margin from the last property to align with the sample */
+    }
+    
+/* Add this CSS to your stylesheet */
+.default-content {
+  text-align: center; /* Center the content horizontally */
+  padding: 20px; /* Add some padding for spacing */
+  background-color: #ffffff; /* Background color */
+  border: 1px solid #ffffff; /* Add a border for separation */
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 20px; /* Space it from the above content */
+  color: #333; /* Text color */
+}
+
+.default-content p {
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+/* Add this CSS to your stylesheet */
+.no-match-content {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: #d9534f; /* Use a color that indicates an error or alert */
+}
+
+.no-match-content p {
+  font-size: 16px;
+}
+

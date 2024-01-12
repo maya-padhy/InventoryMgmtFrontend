@@ -1,0 +1,130 @@
+
+
+<div *ngIf="!isLoginPageOrRegisterPage()">
+<div class="sidebar" #sidebar class="sidebar" [ngClass]="{'close': isSidebarClosed}">
+  <div class="logo-details">
+    <i class='bx bxl-c-plus-plus'></i>
+    <span class="logo_name">CartMaster</span>
+  </div>
+  <ul class="nav-links">
+    <li>
+      <a routerLink="/dashboard">
+        <i class='bx bx-grid-alt'></i>
+        <span class="link_name">Dashboard</span>
+      </a>
+      <ul class="sub-menu" [ngClass]="{'show': isSubMenuOpen('dashboard')}">
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="icon-link" (click)="toggleSubMenu('assets')">
+          <i class='bx bx-package'></i>
+          <span class="link_name">Assets</span>
+
+        <i class='bx bxs-chevron-down arrow'></i>
+      </div>
+      <ul class="sub-menu" [ngClass]="{'show': isSubMenuOpen('assets')}">
+        <li><a class="link_name" href="#">Assets</a></li>
+        <li><a routerLink="asset-details">Asset details</a></li>
+        <li><a routerLink="add-asset">Add assets</a></li>
+      </ul>
+    </li>
+    <li>
+      <div class="icon-link" (click)="toggleSubMenu('supplier')">
+          <i class='bx bx-group'></i>
+          <span class="link_name">Supplier</span>
+        <i class='bx bxs-chevron-down arrow'></i>
+      </div>
+      <ul class="sub-menu" [ngClass]="{'show': isSubMenuOpen('supplier')}">
+        <li><a class="link_name" href="#">Supplier</a></li>
+        <li><a routerLink="supplier-list">Supplier List</a></li>
+        <li><a routerLink="supplier-add">Add Supplier</a></li>
+      </ul>
+    </li>
+    <!-- <li>
+      <div class="icon-link" (click)="toggleSubMenu('inventory')">
+          <i class='bx bx-store'></i>
+          <span class="link_name">Inventory</span>
+        <i class='bx bxs-chevron-down arrow'></i>
+      </div>
+      <ul class="sub-menu" [ngClass]="{'show': isSubMenuOpen('inventory')}">
+        <li><a class="link_name" href="#">Inventory</a></li>
+        <li><a routerLink="unload-inventory">Unload Inventory</a></li>
+        <li><a routerLink="reload-inventory">Reload Inventory</a></li>
+      </ul>
+    </li> -->
+
+    <li>
+      <a routerLink="adjust-stock">
+        <i class='bx bx-store'></i>
+        <span class="link_name">Stock Adjustments</span>
+      </a>
+    </li>
+    <li>
+      <div class="icon-link" (click)="toggleSubMenu('dispatch')">
+
+          <i class='bx bx-transfer'></i>
+          <span class="link_name">Dispatch</span>
+       
+        <i class='bx bxs-chevron-down arrow'></i>
+      </div>
+      <ul class="sub-menu" [ngClass]="{'show': isSubMenuOpen('dispatch')}">
+        <li><a class="link_name" href="#">Dispatch</a></li>
+        <li><a routerLink="dispatch">Dispatch</a></li>
+        <li><a routerLink="dispatch-history">Dispatch History</a></li>
+      </ul>
+      <li>
+        <a routerLink="apidoc">
+          <i class='bx bx-book-open'></i>
+          <span class="link_name">API Documentation</span>
+        </a>
+      </li>
+
+   
+      <!-- <iframe src="http://localhost:9090/swagger-ui/index.html#" width="100%" height="400"></iframe> -->
+
+
+
+  </ul>
+</div>
+
+
+<div class="home-section">
+  <div class="home-content" [ngClass]="{'sidebar-closed': isSidebarClosed}">
+    <div class="left-content">
+    <i (click)="toggleSidebar()" class='bx bx-menu'></i>
+    </div>
+      <div class="navbar-content">
+        <div class="profile-icon">
+          <img src="assets/user.png" alt="Profile Image" routerLink="/user-profile">
+          <!-- <span class="profile-name">{{storedUsername}}</span> -->
+        </div>
+        <!-- <div class="notification">
+          <i class="bx bx-bell"></i>
+          <span class="badge">3</span>
+        </div> -->
+        <div class="settings">
+          <i routerLink="user-management" class="bx bx-cog"></i>
+        </div>
+        <div class="logout">
+          <i class="bx bx-log-out" routerLink="/login" (click)="dataRemove()"></i>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+
+<div  *ngIf="!isLoginPageOrRegisterPage()" class="content">
+  <router-outlet></router-outlet>
+</div>
+
+
+<div *ngIf="isLoginPageOrRegisterPage()" >
+  <router-outlet></router-outlet>
+
+</div>
+
+
+
+  
+

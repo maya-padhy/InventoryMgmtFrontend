@@ -1,0 +1,63 @@
+/* Apply styling to the container */
+.container {
+    background-color: #ffffff;
+    padding: 20px; /* Add padding to adjust spacing */
+    
+  }
+  
+  /* Apply styling to the card headers */
+  .card-header {
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  p {
+    color: #000000;
+    padding: 10px; /* Add padding to adjust spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:xx-large;
+  }
+  
+  /* Apply styling to the chart cards */
+  .chart-card {
+    background-color: #f5f5f5; /* Add a light background color */
+    border: none; /* Remove the border */
+    box-shadow: none; /* Remove the shadow */
+    border-radius: 0; /* Remove border radius */
+    margin: 10px;
+  }
+  
+  /* Set a max-width for the chart cards */
+  .card1-body {
+    max-width: 100%;
+  }
+
+  
+  /* Apply styling to the charts */
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card2 {
+    border: 1px solid #ccc; /* Add a border to the cards */
+    margin: 50px; /* Add some margin for spacing */
+  }
+  
+  /* Optionally, you can add more custom CSS styles to further customize the appearance of the cards and headers. */
+  .card2-header {
+    background-color: hsl(215, 84%, 76%);
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .card2-body {
+    padding: 10px;
+    text-align: center;
+  }
+  

@@ -1,0 +1,74 @@
+   <div class="container">
+
+    <p><mark>Analytics Dashboard</mark></p>
+
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card2 border">
+          <div class="card2-header">
+            <u> Total Suppliers</u>
+          </div>
+          <div class="card2-body">
+            {{ uniqueNamesCount }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card2 border">
+          <div class="card2-header">
+            <u> Total Network Assets</u>
+          </div>
+          <div class="card2-body">
+            {{uniqueAssetNamesCount}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- First Row -->
+    <div class="row">
+      <!-- Bar Chart -->
+      <div class="col-md-6">
+        <div class="card1">
+          <div class="card1-header">
+           <u> Asset Quantities</u>
+          </div>
+          <div class="card1-body">
+            <canvas id="networkAssetsChart"></canvas>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Pie Chart -->
+      <div class="col-md-6">
+        <div class="card1">
+          <div class="card1-header">
+            <u>Count By Type</u>
+          </div>
+          <div class="card1-body">
+            <canvas id="networkAssetsPieChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Second Row -->
+    <div class="row">
+      <!-- Radar Chart -->
+      <div class="col-md-12">
+        <div class="card1">
+          <div class="card1-header">
+          <u> Asset Prices</u> 
+          </div>
+          <div class="card1-body">
+            <canvas id="networkAssetsRadarChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,105 @@
+<!-- 
+   <div class="header">
+    <h1>Inventory Management</h1>
+  </div>
+  
+  <div *ngIf="userdetails" class="user-profile container">
+    <div class="center-icon">
+      <img src="assets/user.png" class="user-image" alt="User Image">
+      <h2>User Profile</h2>
+    </div>
+    <div class="profile-details">
+      <div class="detail-row" *ngIf="!editMode">
+        <strong>Username:</strong>
+        <span>{{ userdetails.username }}</span>
+      </div>
+
+      <div class="detail-row">
+        <strong>Email:</strong>
+        <span *ngIf="!editMode">{{ userdetails.email }}</span>
+        <input [(ngModel)]="editedUser.email" name="email" *ngIf="editMode" />
+      </div>
+      <div class="detail-row">
+        <strong>Password:</strong>
+        <span *ngIf="!editMode">{{ userdetails.password }}</span>
+        <input [(ngModel)]="editedUser.password" name="password" *ngIf="editMode" />
+      </div>
+      <div class="detail-row">
+        <strong>Phone Number:</strong>
+        <span *ngIf="!editMode">{{ userdetails.phoneNumber }}</span>
+        <input [(ngModel)]="editedUser.phoneNumber" name="phoneNumber" *ngIf="editMode" />
+      </div>
+      <div class="detail-row">
+        <strong>Role:</strong>
+        <span *ngIf="!editMode">{{ userdetails.role }}</span>
+        <input [(ngModel)]="editedUser.role" name="role" *ngIf="editMode" />
+      </div>
+    </div>
+  
+    <div class="edit-buttons" *ngIf="!editMode">
+      <button (click)="enableEditMode()">Edit</button>
+    </div>
+    <div class="edit-buttons" *ngIf="editMode">
+      <button (click)="saveChanges()">Save</button>
+      <button (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div>
+  
+  <div *ngIf="!userdetails" style="color: red;">
+    <p>User not found.</p>
+  </div>
+   -->
+
+
+   <div class="header">
+    <h1>Inventory Management</h1>
+  </div>
+  
+  <div *ngIf="userdetails" class="user-profile container">
+    <div class="center-icon">
+      <img src="assets/user.png" class="user-image" alt="User Image">
+      <h2>User Profile</h2>
+    </div>
+    <div class="profile-details">
+      <div class="detail-row" *ngIf="!editMode">
+        <strong>Username:</strong>
+        <span>{{ userdetails.username }}</span>
+      </div>
+  
+      <div class="detail-row">
+        <strong>Email:</strong>
+        <span *ngIf="!editMode">{{ userdetails.email }}</span>
+        <input [(ngModel)]="editedUser.email" name="email" *ngIf="editMode" class="edit-input" />
+      </div>
+      <div class="detail-row">
+        <strong>Password:</strong>
+        <span *ngIf="!editMode">{{ userdetails.password }}</span>
+        <input [(ngModel)]="editedUser.password" name="password" *ngIf="editMode" class="edit-input" />
+      </div>
+      <div class="detail-row">
+        <strong>Phone Number:</strong>
+        <span *ngIf="!editMode">{{ userdetails.phoneNumber }}</span>
+        <input [(ngModel)]="editedUser.phoneNumber" name="phoneNumber" *ngIf="editMode" class="edit-input" />
+      </div>
+      <div class="detail-row">
+        <strong>Role:</strong>
+        <span>{{ userdetails.role }}</span>
+
+        <!-- <span *ngIf="!editMode">{{ userdetails.role }}</span>
+        <input [(ngModel)]="editedUser.role" name="role" *ngIf="editMode" class="edit-input" /> -->
+      </div>
+    </div>
+  
+    <div class="edit-buttons" *ngIf="!editMode">
+      <button (click)="enableEditMode()" class="edit-button">Edit</button>
+    </div>
+    <div class="edit-buttons" *ngIf="editMode">
+      <button (click)="saveChanges()" class="edit-button">Save</button>
+      <button (click)="cancelEdit()" class="edit-button">Cancel</button>
+    </div>
+  </div>
+  
+  <div *ngIf="!userdetails" class="user-not-found">
+    <p>User not found.</p>
+  </div>
+  

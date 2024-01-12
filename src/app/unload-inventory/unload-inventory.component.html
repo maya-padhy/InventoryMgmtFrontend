@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Unload Inventory and Update Quantity</h2>
+  
+    <!-- Search by Asset ID -->
+    <div class="search-by-id">
+      <label for="assetId">Search by Asset ID:</label>
+      <input type="text" [(ngModel)]="assetId" placeholder="Enter Asset ID">
+      <button (click)="searchAsset()">Search</button>
+    </div>
+  
+    <!-- Asset Details and Quantity Update -->
+    <div *ngIf="selectedAsset" class="asset-details">
+      <h3>Asset Details</h3>
+      <!-- Display asset details here -->
+      <p>ID: {{ selectedAsset.id }}</p>
+      <p>Name: {{ selectedAsset.name }}</p>
+      <p>Type: {{ selectedAsset.type }}</p>
+      <p>Supplier: {{ selectedAsset.supplierName }}</p>
+      <p>Model: {{ selectedAsset.model }}</p>
+      <p>Quantity: {{ selectedAsset.qty }}</p>
+      <!-- Allow quantity update -->
+      <label for="newQty">Update Quantity:</label>
+      <input type="number" [(ngModel)]="newQty" placeholder="New Quantity" min="1">
+      <button (click)="unloadQuantity()">Update</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,45 @@
+<div class="header">
+    <h1>Inventory Management</h1>
+  </div>
+             <!-- Error message -->
+             <div *ngIf="errorMessage" class="alert alert-danger">
+                {{ errorMessage }}
+            </div> 
+  <div class="container">
+  
+  
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="center-icon"> 
+            <!-- <i class="fas fa-user-circle fa-3x" style="color: #007BFF;"></i> -->
+            <img src="assets/user.png"  class="user-image">
+        </div>
+                <!-- Username input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="username">Username:</label>
+
+            <input type="text" id="username" class="form-control" formControlName="username" required>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="password">Password:</label>
+
+            <input type="password" id="password" class="form-control" formControlName="password" required>
+        </div>
+
+        <!-- 2 column grid layout for inline styling -->
+        <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+                <p>New member?</p>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <a routerLink="/register">Register</a>
+            </div>
+        </div>
+        <!-- Submit button -->
+        <button type="submit"   class="btn btn-primary btn-block mb-4">Login</button>
+    </form>
+
+
+</div>

@@ -1,0 +1,85 @@
+/* Reset styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f5f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Container styling */
+  .container {
+    text-align: center;
+    background-color: #ffffff;
+    /* padding: 20px; */
+    border-radius: 10px;
+    /* width: 90%;
+    max-width: 1200px; */
+    margin: 0 auto;
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: underline;
+  }
+  
+  /* Table styling */
+  .asset-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Table header styling */
+  .asset-table th {
+    background-color: #f0f5f9;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Table cell styling */
+  .asset-table th, .asset-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Alternate row colors */
+  .asset-table tbody tr {
+    background-color: #fff;
+  }
+  
+  .asset-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Hover effect */
+  .asset-table tbody tr:hover {
+    background-color: #e6f7ff;
+  }
+  
+  /* Supplied Assets column */
+  .supplied-assets {
+    font-size: 16px;
+    color: #333;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Style the supplied assets list */
+  .supplied-assets-list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  

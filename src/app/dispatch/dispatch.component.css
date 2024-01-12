@@ -1,0 +1,215 @@
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: underline;
+  }
+  
+  .container {
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    max-width: 800px;
+    width: 90%;
+    
+    text-align: center;
+  }
+  
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea,
+  button[type="button"],
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    margin-top: 5px;
+  }
+  
+  button[type="button"],
+  button[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    margin-bottom: 2%;
+    cursor: pointer;
+  }
+
+ .showpopup
+  {  background-color: #3498db;
+    color: #fff;
+    border: none;
+    margin-bottom: 2%;
+    cursor: pointer;
+    border-radius: 4px;
+
+
+  }
+  
+
+  label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+
+
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    margin-top: 5px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-top: 10px;
+    color: #333;
+  }
+
+  .column {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.column label,
+.column input,
+.column select {
+    width: 100%;
+    margin: 5px 0;
+   
+}
+
+.asset-quantity {
+    flex-basis: 48%; /* Adjust the width as needed */
+}
+.left-column {
+    flex-basis: 48%;
+}
+
+.right-column {
+    flex-basis: 48%;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column {
+    flex-basis: 48%;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+/* Additional styling as needed */
+
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    margin-top: 5px;
+}
+
+.input-with-icon i {
+    margin-left: 10px;
+    font-size: 24px; /* Adjust the size as needed */
+    color: green; /* Adjust the color as needed */
+    cursor: pointer;
+}
+
+/* .confirmation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  } */
+
+  .confirmation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; /* Light Gray Background */
+    border: 2px solid #3498db; 
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+  }
+  
+  
+  .confirmation-popup h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .confirmation-popup ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .confirmation-popup li {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .confirmation-popup button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .confirmation-popup button.cancel {
+    background-color: #ccc;
+  }
+  
+  .confirmation-popup button:hover {
+    background-color: #2980b9;
+  }
+  

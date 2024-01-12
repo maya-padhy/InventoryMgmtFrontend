@@ -1,0 +1,149 @@
+<!-- <div class="container">
+  <input type="text" [(ngModel)]="searchQuery" (ngModelChange)="onSearchQueryChange()" placeholder="Search by Supplier Name">
+    <h2>Supplier List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>Supplied Assets</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let supplier of suppliers; let i = index">
+          <tr>
+            <td>{{ supplier.name }}</td>
+            <td>
+              <span *ngIf="!editing[i]">{{ supplier.email }}</span>
+              <input
+                *ngIf="editing[i]"
+                [(ngModel)]="editedEmail[i]"
+                type="email"
+              />
+            </td>
+            <td>
+              <span *ngIf="!editing[i]">{{ supplier.phoneNumber }}</span>
+              <input
+                *ngIf="editing[i]"
+                [(ngModel)]="editedPhoneNumber[i]"
+                type="number"
+              />
+            </td>
+            <td>
+              <span *ngIf="!editing[i]">{{ supplier.address }}</span>
+              <input *ngIf="editing[i]" [(ngModel)]="editedAddress[i]" type="text" />
+            </td>
+            <td>
+                <ul>
+                  <li *ngFor="let asset of supplierAssets[supplier.name]">
+                    {{ asset.name }} (Type: {{ asset.type }})
+                  </li>
+                </ul>
+              </td>
+            <td>
+              <button
+                *ngIf="!editing[i]"
+                (click)="editSupplier(i)"
+                class="btn btn-primary"
+              >
+                Edit
+              </button>
+              <button
+                *ngIf="editing[i]"
+                (click)="saveChanges(i)"
+                class="btn btn-success"
+              >
+                Save Changes
+              </button>
+              <button
+                *ngIf="editing[i]"
+                (click)="cancelEdit(i)"
+                class="btn btn-danger"
+              >
+                Cancel
+              </button>
+              <button (click)="deleteSupplier(supplier.id)" class="btn btn-danger">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+   -->
+
+
+   <div class="container">
+    <h1 class="title">Supplier List</h1>
+    <div class="search-row">
+    <div class="search-container">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        (ngModelChange)="onSearchQueryChange()"
+        placeholder="Search by Supplier Name"
+        class="search-input"
+      />
+      <i class="fas fa-search search-icon"></i>
+    </div>
+    <button class="btn btn-primary"><a class="add-link" routerLink="/supplier-add">+ Add Supplier</a></button>
+  </div>
+
+    <div class="table-container">
+      <table class="asset-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Website</th>
+            <th>Supplied Assets</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let supplier of suppliers; let i = index">
+            <tr>
+              <td>{{ supplier.name }}</td>
+              <td>
+                <span *ngIf="!editing[i]">{{ supplier.email }}</span>
+                <input *ngIf="editing[i]" [(ngModel)]="editedEmail[i]" type="email" />
+              </td>
+              <td>
+                <span *ngIf="!editing[i]">{{ supplier.phoneNumber }}</span>
+                <input *ngIf="editing[i]" [(ngModel)]="editedPhoneNumber[i]" type="number" />
+              </td>
+              <td>
+                <span *ngIf="!editing[i]">{{ supplier.address }}</span>
+                <input *ngIf="editing[i]" [(ngModel)]="editedAddress[i]" type="text" />
+              </td>
+              <td class="website-column">
+                <a *ngIf="!editing[i]" [href]="supplier.website" target="_blank">{{ supplier.website }}</a>     
+                <input *ngIf="editing[i]" [(ngModel)]="editedWebsite[i]" type="text" />
+              </td>
+
+              <td class="supplied-assets">
+                <ul class="supplied-assets-list">
+                  <li *ngFor="let asset of supplierAssets[supplier.name]">
+                    {{ asset.name }} (Type: {{ asset.type }})
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <i *ngIf="!editing[i]" class="fas fa-edit edit-icon" (click)="editSupplier(i)"></i>
+                <i *ngIf="editing[i]" class="fas fa-save save-icon" (click)="saveChanges(i)"></i>
+                <i *ngIf="editing[i]" class="fas fa-times cancel-icon" (click)="cancelEdit(i)"></i>
+                <i class="fas fa-trash delete-icon" (click)="deleteSupplier(supplier.id)"></i>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

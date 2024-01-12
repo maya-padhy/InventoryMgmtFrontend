@@ -1,0 +1,79 @@
+ <div class="container">
+  <h1 class="title">Update Asset Quantity</h1>
+  <!-- Search by Asset ID -->
+  <!-- <div class="search-by-id">
+    <label for="assetId" class="search-label">Search by Asset ID:</label>
+    <div class="search-field">
+      <input type="text" [(ngModel)]="assetId" placeholder="Enter Asset ID" class="search-input">
+      <i  (click)="searchAsset()" class="fa fa-search search-icon"></i>
+    </div>
+  </div> -->
+
+
+  <div class="search-row">
+    <div class="search-container">
+      <input
+        type="text"
+        [(ngModel)]="assetId"
+        (ngModelChange)="searchAsset()"
+        placeholder="Search by Asset id"
+        class="search-input"
+      />
+      <i  (click)="searchAsset()" class="fas fa-search search-icon"></i>
+    </div>
+
+  <!-- Asset Details and Quantity Update -->
+  <div *ngIf="selectedAsset" class="asset-details">
+    <div class="asset-info">
+      <h3 class="section-title">Asset Details</h3>
+      <div class="property">
+        <span class="label">ID:</span>
+        <span class="value">{{ selectedAsset.id }}</span>
+      </div>
+      <div class="property">
+        <span class="label">Name:</span>
+        <span class="value">{{ selectedAsset.name }}</span>
+      </div>
+      <div class="property">
+        <span class="label">Type:</span>
+        <span class="value">{{ selectedAsset.type }}</span>
+      </div>
+      <div class="property">
+        <span class="label">Supplier:</span>
+        <span class="value">{{ selectedAsset.supplierName }}</span>
+      </div>
+      <div class="property">
+        <span class="label">Model:</span>
+        <span class="value">{{ selectedAsset.model }}</span>
+      </div>
+      <div class="property">
+        <span class="label">Quantity:</span>
+        <span class="value">{{ selectedAsset.qty }}</span>
+      </div>
+    </div>
+    
+    <div class="update-section">
+      <label for="newQty">Update Quantity:</label>
+      <input type="number" [(ngModel)]="newQty" placeholder="New Quantity" min="1">
+      
+      <!-- Dropdown to select Reload or Unload -->
+      <label for="operation">Select Operation:</label>
+      <select [(ngModel)]="selectedOperation">
+        <option value="reload">Reload</option>
+        <option value="unload">Unload</option>
+      </select>
+  
+      <button class="btn btn-primary" (click)="updateQuantity()">Update</button>
+    </div>
+  </div> 
+</div>
+
+<div *ngIf="!assetId" class="default-content">
+  <p>Enter an Asset ID in the search bar to update its quantity.</p>
+</div>
+
+<div *ngIf="!selectedAsset && assetId" class="no-match-content">
+  <p>No asset found for the provided ID. Please check the Asset ID and try again.</p>
+</div>
+
+</div>

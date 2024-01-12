@@ -1,0 +1,45 @@
+<!-- <div class="container">
+    <h2>User Management</h2>
+
+    <div *ngFor="let user of users">
+      {{ user.username }} ({{ user.email }}) - Role: {{ user.role }}
+      <button (click)="approveUser(user.id)" *ngIf="user.approvedBySuperAdmin === false">Approve</button>
+    </div>
+  </div>
+   -->
+
+   <!-- Table for displaying user details -->
+   <div *ngIf="isAdmin">
+    <h1 class="title">User Management</h1>
+
+<table class="table">
+  <title>User Details</title>
+  <thead>
+      <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Role</th>
+          <th>Approval</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let user of users">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phoneNumber }}</td>
+          <td>{{ user.role }}</td>
+          <td [ngClass]="{'approved': user.approvedBySuperAdmin, 'deleted': user.deleted}">
+            <i class="fas fa-check check" (click)="approveUser(user.id)" *ngIf="!user.approvedBySuperAdmin"></i>
+             <span *ngIf="user.approvedBySuperAdmin">Approved</span>
+             <i class="fas fa-trash delete-icon" (click)="deleteUser(user.id)" *ngIf="!user.deleted"></i>
+
+          </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<div *ngIf="!isAdmin" class="error" style="color:red">
+<span>Oops!!
+  Only Superadmin can access this page.</span>
+</div>

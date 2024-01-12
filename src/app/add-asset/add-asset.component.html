@@ -1,0 +1,146 @@
+  <!-- <div class="container">
+    <h2>Add New Asset</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="newAsset.name" required>
+          </div>
+          <div class="form-group">
+            <label for="type">Type:</label>
+            <div>
+            <select id="type" name="type" [(ngModel)]="newAsset.type" required>
+              <option *ngFor="let type of assetTypes" [value]="type">{{ type }}</option>
+            </select>            
+            <i class="fas fa-plus plus" (click)="openAddAssetTypeModal()" style="margin-left: 10px; color: green;"></i>
+            <i class="fas fa-trash delete" (click)="onDeleteAssetType()" *ngIf="newAsset.type" style="margin-left: 10px; color:red;"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="model">Model:</label>
+            <input type="text" id="model" name="model" [(ngModel)]="newAsset.model" required>
+          </div>
+          <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" [(ngModel)]="newAsset.status" required>
+              <option value="Active">Active</option>
+              <option value="Deactivated">Deactivated</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="supplier">Supplier:</label>
+            <select id="supplier" name="supplier" [(ngModel)]="newAsset.supplierName" required>
+              <option *ngFor="let supplier of suppliers" [value]="supplier.name">{{ supplier.name }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" [(ngModel)]="newAsset.qty" required>
+          </div>
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" [(ngModel)]="newAsset.price" required>
+          </div>
+        </div> 
+      </div>
+      <button type="submit" class="btn btn-primary">Add Asset</button>
+    </form>
+  </div> -->
+  
+
+  <div class="container">
+    <h2>Add New Asset</h2>
+    <form (ngSubmit)="onSubmit()" #assetForm="ngForm" novalidate>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="newAsset.name" required #name="ngModel">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+              <div *ngIf="name.errors?.['required']">Name is required.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="type">Type:</label>
+            <div>
+              <select id="type" name="type" [(ngModel)]="newAsset.type" required #type="ngModel">
+                <option *ngFor="let type of assetTypes" [value]="type">{{ type }}</option>
+              </select>
+              <i class="fas fa-plus plus" (click)="openAddAssetTypeModal()" style="margin-left: 10px; color: green;"></i>
+              <i class="fas fa-trash delete" (click)="onDeleteAssetType()" *ngIf="newAsset.type" style="margin-left: 10px; color: red;"></i>
+              <div *ngIf="type.invalid && (type.dirty || type.touched)" class="error-message">
+                <div *ngIf="type.errors?.['required']">Type is required.</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="model">Model:</label>
+            <input type="text" id="model" name="model" [(ngModel)]="newAsset.model" required #model="ngModel">
+            <div *ngIf="model.invalid && (model.dirty || model.touched)" class="error-message">
+              <div *ngIf="model.errors?.['required']">Model is required.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" [(ngModel)]="newAsset.status" required #status="ngModel">
+              <option value="Active">Active</option>
+              <option value="Deactivated">Deactivated</option>
+            </select>
+            <div *ngIf="status.invalid && (status.dirty || status.touched)" class="error-message">
+              <div *ngIf="status.errors?.['required']">Status is required.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="supplier">Supplier:</label>
+            <select id="supplier" name="supplier" [(ngModel)]="newAsset.supplierName" required #supplier="ngModel">
+              <option *ngFor="let supplier of suppliers" [value]="supplier.name">{{ supplier.name }}</option>
+            </select>
+            <div *ngIf="supplier.invalid && (supplier.dirty || supplier.touched)" class="error-message">
+              <div *ngIf="supplier.errors?.['required']">Supplier is required.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" [(ngModel)]="newAsset.qty" required #quantity="ngModel">
+            <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)" class="error-message">
+              <div *ngIf="quantity.errors?.['required']">Quantity is required.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" [(ngModel)]="newAsset.price" required #price="ngModel">
+            <div *ngIf="price.invalid && (price.dirty || price.touched)" class="error-message">
+              <div *ngIf="price.errors?.['required']">Price is required.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="assetForm.invalid">Add Asset</button>
+    </form>
+  </div>
+
+  <div class="modal" [ngClass]="{ 'open': isAddAssetTypeModalOpen }">
+    <div class="modal-content">
+      <i class="fas fa-times close" (click)="closeAddAssetTypeModal()"></i>
+      <h2>Add New Asset Type</h2>
+      <form (ngSubmit)="addNewAssetType()">
+        <div class="form-group">
+          <label for="newType">New Type:</label>
+          <input type="text" id="newType" name="newType" [(ngModel)]="newType" required>
+        </div>
+        <div class="form-group">
+          <button type="submit">Add Type</button>
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+
+
+

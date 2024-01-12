@@ -1,0 +1,69 @@
+
+<div class="container">
+  <h2>Dispatch Inventory</h2>
+  <form (ngSubmit)="dispatchInventory()" class="form-container" #dispatchForm="ngForm" novalidate >
+      <div class="form-column">
+          <div class="form-group">
+              <label for="customerName">Customer Name:</label>
+              <input type="text" id="customerName" [(ngModel)]="customerName" name="customerName" required>
+          </div>
+
+          <div class="form-group">
+              <label for="customerEmail">Customer Email:</label>
+              <input type="email" id="customerEmail" [(ngModel)]="customerEmail" name="customerEmail" required>
+          </div>
+
+          <div class="form-group">
+              <label for="customerPhone">Customer Phone:</label>
+              <input type="tel" id="customerPhone" [(ngModel)]="customerPhone" name="customerPhone" required>
+          </div>
+
+          <div class="form-group">
+              <label for="customerAddress">Customer Address:</label>
+              <textarea id="customerAddress" [(ngModel)]="customerAddress" name="customerAddress" required></textarea>
+          </div>
+      </div>
+
+      <div class="form-column">
+          <div class="form-group">
+            <label for="selectedAsset">Select Asset:</label>
+            <select id="selectedAsset" [(ngModel)]="selectedAsset" name="selectedAsset">
+              <option value="">-- Select an Asset --</option>
+              <ng-container *ngFor="let groupbytypes of organizedAssets">
+                  <ng-container *ngFor="let asset of groupbytypes.assets">
+                      <option [value]="asset.name">{{ asset.name }} - Rs.{{ asset.price }}</option>
+                  </ng-container>
+              </ng-container>
+          </select>
+          
+          
+                        <div class="input-with-icon" *ngIf="selectedAsset">
+              <label for="assetQuantity">Quantity for {{ selectedAsset }}:</label>
+              <input type="number" id="assetQuantity" [(ngModel)]="assetQuantities[selectedAsset]" name="assetandqty" required>
+              <i class="fas fa-plus" (click)="addAsset()"></i>
+                     </div>
+                    </div>
+                     
+
+        
+  <div *ngIf="showConfirmationPopup">
+    <div class="confirmation-popup">
+      <i class="fas fa-times" style="color: gray; cursor: pointer;" (click)="cancelDispatch()"></i>
+      <h3>Confirm Dispatch</h3>
+      <p>Selected Assets:</p>
+      <ul>
+        <li *ngFor="let asset of selectedAssets">{{ asset.name }} (Quantity: {{ asset.quantity }}) 
+         <i class="fas fa-trash-alt"  style="color: red; cursor: pointer;" (click)="removeAsset(asset)"></i>
+        </li>
+      </ul>
+      
+      <i class="fas fa-check" style="color: green; cursor: pointer;"  (click)="confirmDispatch()" ></i>
+    </div>
+  </div>
+
+  <button class="showpopup" *ngIf="!showConfirmationPopup" [disabled]="dispatchForm.invalid"  (click)="showConfirmation()">Dispatch</button>
+  
+</div>
+</form>
+
+<div *ngIf="showInvalidMessage">Dispatch Details Invalid!!!</div>

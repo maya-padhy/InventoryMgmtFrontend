@@ -1,0 +1,158 @@
+/* Table Styles for your code */
+/* Reset styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f5f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  
+  /* Container styling */
+  .container {
+    text-align: center;
+    background-color: #ffffff;
+    /* padding: 20px; */
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* width: 90%; */
+    /* max-width: 1200px; */
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: underline;
+  }
+
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  .table th {
+    /* background-color: #f0f5f9; */
+    background-color: #000000;
+
+    font-weight: bold;
+    color: #a0a0a0;
+  }
+  
+  
+  .table th,
+  .table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table tbody tr {
+    background-color: #fff;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #e6f7ff;
+  }
+  
+  /* Button Styles for your code */
+  button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #007BFF; /* Blue button background color */
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Slightly darker shade on hover */
+  }
+  
+  /* Table container for your code */
+  .table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  
+  
+  /* Edit and save icons for your code */
+  i.fas {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .edit-icon {
+    color: #3498db; /* Edit icon color (blue) */
+  }
+  
+  save-icon {
+    color: #27ae60; /* Save icon color (green) */
+  }
+
+  .check{
+    color: #27ae60;
+  }
+  
+  cancel-icon {
+    color: goldenrod; /* Cancel icon color (gold) */
+  }
+  
+  .delete-icon {
+    color: #c0392b; /* Delete icon color (darker red) */
+  }
+  
+  /* Search Container Styles for your code */
+  .search-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    transition: border-color 0.3s;
+  }
+  
+  .search-container:focus-within {
+    border-color: #3498db;
+  }
+  
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .search-icon {
+    font-size: 20px;
+    color: #3498db;
+    cursor: pointer;
+  }
+  
+  /* Button Styles for Add Supplier */
+  .btn-primary {
+    background-color: #3498db; /* Blue button background color */
+    color: #fff;
+  }
+  

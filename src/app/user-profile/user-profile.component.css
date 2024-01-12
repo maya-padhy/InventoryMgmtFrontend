@@ -1,0 +1,115 @@
+/* .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    flex-direction: column;
+  }
+  
+  .user-profile {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 60%;
+    max-width: 500px;
+  }
+  
+  .user-image {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .header {
+    background-color: black;
+    color: #a0a0a0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .alert-danger {
+    width: 20%;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0; 
+  }
+  
+ 
+   */
+
+
+   .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    flex-direction: column;
+  }
+  
+  .user-profile {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .user-image {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .edit-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .edit-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .user-not-found {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  

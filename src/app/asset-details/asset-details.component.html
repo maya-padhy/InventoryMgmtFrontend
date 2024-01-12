@@ -1,0 +1,115 @@
+
+      <!-- <div class="container"> -->
+        <h1 class="title">Network Assets</h1>
+
+        <div class="filters">
+          <div class="filter-item">
+            <label for="searchQuery">Search:</label>
+            <input type="text" [(ngModel)]="searchQuery" (ngModelChange)="onFilterChange()"  placeholder="Search by Asset Name" />
+          </div>
+          
+     
+          
+          <div class="filter-item">
+            <label for="filterOptions">Filter:</label>
+            <select id="filterOptions" [(ngModel)]="filterOption" (ngModelChange)="onFilterOptionChange()">
+              <option value="All">All</option>
+              <option value="Type">Type</option>
+              <option value="Supplier">Supplier</option>
+              <option value="MinQty">Min Quantity</option>
+            </select>
+          </div>
+          <ng-container *ngIf="showFilters">
+            <div class="filter-item" *ngIf="filterOption === 'Type'">
+              <label for="assetTypes">Type:</label>
+              <select id="assetTypes" [(ngModel)]="selectedTypes" multiple (ngModelChange)="onFilterChange()">
+                <option *ngFor="let type of allTypes" [value]="type">{{ type }}</option>
+              </select>
+            </div>
+            <div class="filter-item" *ngIf="filterOption === 'Supplier'">
+              <label for="assetSupplier">Supplier:</label>
+              <select id="supplierSelect" [(ngModel)]="selectedSuppliers" multiple (ngModelChange)="onFilterChange()">
+                <option *ngFor="let supplier of allSuppliers" [value]="supplier">{{ supplier }}</option>
+              </select>
+            </div>
+            <div class="filter-item" *ngIf="filterOption === 'MinQty'">
+              <label for="minQty">Minimum Quantity Limit:</label>
+              <input type="number" [(ngModel)]="minQtyLimit" (ngModelChange)="onFilterChange()" />
+            </div>    
+          </ng-container>
+        </div>
+      <div class="active-filters" *ngIf="activeFilters.length > 0">
+        <span class="filter-tag" *ngFor="let filter of activeFilters">
+          {{ filter }}
+          <span class="remove-filter" (click)="removeFilter(filter)">x</span>
+        </span>
+      </div>
+      <button (click)="exportExcel()" class="btn btn-primary">Export Excel</button>
+
+
+      
+      <div class="table-container">
+
+      <table class="asset-table">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Supplier</th>
+                  <th>Model</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Total Price</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <ng-container *ngFor="let assetGroup of organizedAssets">
+                  <tr *ngFor="let selectedAsset of assetGroup.assets" [ngClass]="{ 'low-quantity': selectedAsset.qty <= minQtyLimit }">
+                      <td>{{ selectedAsset.id }}</td>
+                      <td>{{ selectedAsset.name }}</td>
+                      <!-- <td>{{ selectedAsset.type }}</td> -->
+                      <td class="type-column">{{ selectedAsset.type }}</td>
+                      
+                      <td>
+                          <ng-container *ngIf="!isEditMode">{{ selectedAsset.supplierName }}</ng-container>
+                          <div class="form-group" *ngIf="isEditMode">
+                              <select [(ngModel)]="selectedAsset.supplierName" id="supplier" name="supplier" required>
+                                  <option *ngFor="let supplier of allSuppliers" [value]="supplier">{{ supplier }}</option>
+                              </select>
+                          </div>
+                      </td>
+                      <td>
+                          <ng-container *ngIf="!isEditMode">{{ selectedAsset.model }}</ng-container>
+                          <input *ngIf="isEditMode" [(ngModel)]="selectedAsset.model" />
+                      </td>
+                      <td>{{ selectedAsset.qty }}</td>
+                      <td>
+                          <ng-container *ngIf="!isEditMode">Rs.{{ selectedAsset.price}}</ng-container>
+                          <input *ngIf="isEditMode" [(ngModel)]="selectedAsset.price" />
+                      </td>
+                      <td>Rs.{{ calculateTotalPrice(selectedAsset)}}</td>
+                      
+                      <td>
+                        <ng-container *ngIf="!isEditMode">{{ selectedAsset.status}}</ng-container>
+                        <select *ngIf="isEditMode" [(ngModel)]="selectedAsset.status" >
+                          <option>Active</option>
+                          <option>Deactivated</option>
+                          </select>
+                    </td>
+                      <td>
+                          <i *ngIf="!isEditMode" class="fas fa-edit edit-icon" (click)="toggleEditMode(selectedAsset)"></i>
+                          <i *ngIf="isEditMode" (click)="saveChanges(selectedAsset)" class="fas fa-save save-icon"></i>
+                          <i *ngIf="isEditMode" (click)="cancelUpdate()" class="fas fa-times cancel-icon"></i>
+                          <i (click)="deleteAsset(selectedAsset.id)" class="fas fa-trash delete-icon"></i>
+
+                      </td>
+                  </tr>
+              </ng-container>
+          </tbody>
+      </table>
+  </div>
+
+<!-- </div> -->

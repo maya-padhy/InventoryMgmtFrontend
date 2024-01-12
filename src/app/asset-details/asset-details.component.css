@@ -1,0 +1,211 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f5f8;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-primary{
+  background-color: #004471; ;
+  color: #fff;
+  border: none;
+  margin-bottom: 2%;
+
+}
+
+/* .type-column {
+  font-weight: bold;
+  color: #007BFF; 
+} */
+
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-decoration: underline;
+}
+
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.filter-item {
+  flex: 1;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+/* Add more spacing between table cells */
+.asset-table th,
+.asset-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style table header (th) background, font, and border */
+.asset-table th {
+  /* background-color: #f1f1f1; */
+  background-color: #f0f5f9;
+  font-weight: bold;
+  color: #333;
+  /* border: 1px solid #ddd; */
+}
+
+/* Style table rows and alternate row colors */
+.asset-table tbody tr {
+  background-color: #fff;
+}
+
+.asset-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Change hover color to the one you prefer */
+.asset-table tbody tr:hover {
+  background-color: #e6f7ff;
+}
+
+/* Add border to the table */
+.asset-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Make table header text uppercase */
+.asset-table th {
+  text-transform: uppercase;
+}
+
+/* Add spacing to the table container */
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+
+.button {
+  padding: 8px 16px;
+  margin-right: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.is-primary {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.is-danger {
+  background-color: #DC3545;
+  color: #fff;
+}
+
+.low-quantity {
+  color: red;
+}
+
+
+
+.active-filters {
+  margin: 10px 0;
+}
+
+.filter-tag {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 4px 8px;
+  margin-right: 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* First Active Filter */
+.filter-tag:nth-child(1) {
+  background-color: #FFD3E0;
+  color: #333; /* Dark Text Color */
+}
+
+/* Second Active Filter */
+.filter-tag:nth-child(2) {
+  background-color: #F0E68C; /* Khaki */
+  color: #333; /* Dark Text Color */
+}
+
+/* Third Active Filter */
+.filter-tag:nth-child(3) {
+  background-color: #B0E0E6; /* Powder Blue */
+  color: #333; /* Dark Text Color */
+}
+
+
+
+.remove-filter {
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+
+.edit-icon {
+  color: #3498db; /* Edit icon color (blue) */
+  margin-right: 8px; /* Add spacing to the right of the icon */
+}
+
+.save-icon {
+  color: #27ae60; /* Save icon color (green) */
+  margin-right: 8px; /* Add spacing to the right of the icon */
+}
+
+.cancel-icon {
+  /* color: #e74c3c; Cancel icon color (red) */
+  color:goldenrod;
+  margin-right: 8px; /* Add spacing to the right of the icon */
+}
+
+.delete-icon {
+  color: #c0392b; /* Delete icon color (darker red) */
+  margin-right: 8px; /* Add spacing to the right of the icon */
+}
+
+
